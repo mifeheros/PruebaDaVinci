@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button slot=start color="danger" fill="clear" (click)="this.navCtrl.navigateRoot('/home')"> <ion-icon slot="icon-only" name="arrow-back"></ion-icon></ion-button>
+    <ion-title style="text-align: center;" class="text-uppercase">
+      Consulta de Especialistas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="row justify-content-center">
+    <div class="col-xl-10 col-md-10 col-11">
+      <ion-card class="tarjet">
+        <ion-card-header color="primary">
+          <ion-card-title class="text-uppercase">
+            Especialistas 
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <table class="table table-responsive-sm text-center">
+            <thead>
+              <tr>
+                <th class="text-wrap">Nombre</th>
+                <th class="text-wrap">Especialidad</th>
+                <th class="text-wrap">Días</th>
+                <th class="text-wrap">Consultorio</th>
+                <th class="text-wrap">Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of global.x">
+                <td class="text-wrap">{{item.Nombre}}</td>
+                <td class="text-wrap">{{item.Especialidad}}</td>
+                <td class="text-wrap row justify-content-center">
+                    <ion-img *ngIf="item.Dias.Lunes" src="/assets/imgs/monday.png" class="col-2"></ion-img>
+                    <ion-img *ngIf="item.Dias.Martes" src="/assets/imgs/tuesday.png" class="col-2"></ion-img>
+                    <ion-img *ngIf="item.Dias.Miercoles" src="/assets/imgs/wednesday.png" class="col-2"></ion-img>
+                    <ion-img *ngIf="item.Dias.Jueves" src="/assets/imgs/thursday.png" class="col-2"></ion-img>
+                    <ion-img *ngIf="item.Dias.Viernes" src="/assets/imgs/friday.png" class="col-2"></ion-img>
+                </td>
+                <td class="text-wrap">{{item.consultorio}}</td>
+                <td class="text-wrap">
+                  <ion-button expand="block" color="success" (click)="CLICK(item.Nombre)">Agendar Cita</ion-button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

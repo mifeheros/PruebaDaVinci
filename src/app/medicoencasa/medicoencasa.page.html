@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button slot=start color="danger" fill="clear" (click)="this.navCtrl.navigateRoot('/home')"> <ion-icon slot="icon-only" name="arrow-back"></ion-icon></ion-button>
+    <ion-title style="text-align: center;" class="text-uppercase">
+      Solicitud de médico en casa
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="row justify-content-center">
+    <div class="col-xl-10 col-md-10 col-11">
+      <ion-card class="tarjet">
+        <ion-card-header color="primary">
+          <ion-card-title class="text-uppercase">
+            Nueva Solicitud
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="row justify-content-center">
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Nombres: </ion-label>
+              <ion-input placeholder="Nombres del Paciente"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Apellidos: </ion-label>
+              <ion-input placeholder="Apellidos del Paciente"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Documento: </ion-label>
+              <ion-input placeholder="Número de Documento del paciente"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Direccion: </ion-label>
+              <ion-input placeholder="Direccion de Visita"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Teléfono: </ion-label>
+              <ion-input placeholder="Teléfono de contacto"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Nivel de Urgencia: </ion-label>
+              <ion-select [(ngModel)]="Var">
+                <ion-select-option value="SE" selected>Seleccione</ion-select-option>
+                <ion-select-option value="Alta">Alta</ion-select-option>
+                <ion-select-option value="Media">Media</ion-select-option>
+                <ion-select-option value="Baja">Baja</ion-select-option>
+                <ion-select-option value="Consulta">Consulta Periódica</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-12">
+              <ion-label position="floating" color="primary">Descripcion de los sintomas: </ion-label>
+              <ion-textarea placeholder="Describa Brevemente su condición"></ion-textarea>
+            </ion-item>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <div class="row justify-content-center">
+        <ion-button class="col-xl-4 col-6" expand="block" fill="outline" size="large" (click)="Click()">
+          <ion-icon slot="start" name="medkit-outline"></ion-icon>
+          Solicitar Visita
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,86 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button slot=start color="danger" fill="clear" (click)="this.navCtrl.navigateRoot('/home')"> <ion-icon slot="icon-only" name="arrow-back"></ion-icon></ion-button>
+    <ion-title style="text-align: center;" class="text-uppercase">
+      Cotizar cirugía
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="row justify-content-center" >
+    <div class="col-xl-8 col-md-8 col-10">
+      <ion-card class="tarjet">
+        <ion-card-content>
+          <div class="row justify-content-center" id="grafica">
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Nombre: </ion-label>
+              <ion-input placeholder="Nombres"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Apellido: </ion-label>
+              <ion-input placeholder="Apellidos"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Documento: </ion-label>
+              <ion-input placeholder="Número de Documento"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Procedimiento: </ion-label>
+              <ion-input placeholder="Procedimiento a realizar"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Celular: </ion-label>
+              <ion-input placeholder="Número de Celular" type="number"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Fecha Tentativa: </ion-label>
+              <ion-input placeholder="Fecha de cirugía" type="date"></ion-input>
+            </ion-item>
+            <ion-item class="col-12">
+              <ion-label color="primary">Requiere Material de Osteosíntesis</ion-label>
+              <ion-checkbox slot="end"></ion-checkbox>
+            </ion-item>
+            <ion-item class="col-12">
+              <ion-label color="primary">Requiere Equipos Especiales </ion-label>
+              <ion-checkbox slot="end"></ion-checkbox>
+            </ion-item>
+            <ion-item class="col-12">
+              <ion-label color="primary">Requiere Insumos Especiales </ion-label>
+              <ion-checkbox slot="end"></ion-checkbox>
+            </ion-item>
+            <ion-item class="col-12">
+              <ion-label color="primary">Cirugía Ambulatoria </ion-label>
+              <ion-checkbox slot="end"></ion-checkbox>
+            </ion-item>
+            <ion-item class="col-12">
+              <ion-label color="primary">Cirugía con Hospitalización</ion-label>
+              <ion-checkbox slot="end"></ion-checkbox>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Tipo de Anestesia</ion-label>
+              <ion-select [(ngModel)]="Var">
+                <ion-select-option value="SE" selected>Seleccione</ion-select-option>
+                <ion-select-option value="Local">Local</ion-select-option>
+                <ion-select-option value="General">General</ion-select-option>
+                <ion-select-option value="Peridural">Peridural</ion-select-option>
+                <ion-select-option value="Raquídea">Raquídea</ion-select-option>
+                <ion-select-option value="Bloqueo">Bloqueo</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Duración Aprox.(horas): </ion-label>
+              <ion-input placeholder="Duracion de la Cirugía" type="number"></ion-input>
+            </ion-item>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div> 
+  </div>
+  <div class="row justify-content-center">
+    <ion-button class="col-xl-4 col-6" expand="block" fill="outline" size="large" (click)="CLICK()">
+      <ion-icon slot="start" name="document-text-outline"></ion-icon>
+      Realizar Cotización
+    </ion-button>
+  </div>
+</ion-content>

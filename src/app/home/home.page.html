@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title style="text-align: center;"  class="text-uppercase">
+      Página Principal
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="row justify-content-center">
+    <div class="col-xl-3 col-md-6 col-10">
+      <ion-card class="tarjet" (click)="Agendar()">
+        <ion-card-header>
+          <ion-img src="/assets/imgs/agendar.png" class="foto"></ion-img>
+        </ion-card-header>
+        <ion-button expand="block" fill="clear" size="large">Agendar Cita Medica</ion-button>
+      </ion-card>
+    </div>
+    <div class="col-xl-3 col-md-6 col-10">
+      <ion-card class="tarjet" (click)="Cotizar()">
+        <ion-card-header>
+          <ion-img src="/assets/imgs/cirugia.png" class="foto"></ion-img>
+        </ion-card-header>
+        <ion-button expand="block" fill="clear" size="large" class="text-wrap">Cotizar Cirugías</ion-button>
+      </ion-card>
+    </div>
+    <div class="col-xl-3 col-md-6 col-10">
+      <ion-card class="tarjet" (click)="Especialistas()">
+        <ion-card-header>
+          <ion-img src="/assets/imgs/consulta.png" class="foto"></ion-img>
+        </ion-card-header>
+        <ion-button expand="block" fill="clear" size="large" class="text-wrap">Consulta de Especialistas</ion-button>
+      </ion-card>
+    </div>
+    <div class="col-xl-3 col-md-6 col-10">
+      <ion-card class="tarjet" (click)="Medico()">
+        <ion-card-header>
+          <ion-img src="/assets/imgs/solicitud.png" class="foto"></ion-img>
+        </ion-card-header>
+        <ion-button expand="block" fill="clear" size="large" class="text-wrap">Solicitar médico en casa</ion-button>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

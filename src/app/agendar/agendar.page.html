@@ -1,0 +1,92 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button slot=start color="danger" fill="clear" (click)="this.navCtrl.navigateRoot('/home')"> <ion-icon slot="icon-only" name="arrow-back"></ion-icon></ion-button>
+    <ion-title style="text-align: center;" class="text-uppercase">
+      Agendar Nueva Cita
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="row justify-content-center">
+    <div class="col-xl-10 col-md-10 col-11">
+      <ion-card class="tarjet">
+        <ion-card-header color="primary">
+          <ion-card-title class="text-uppercase">
+            Formulario 
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="row justify-content-center">
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Nombre: </ion-label>
+              <ion-input placeholder="Nombres del Beneficiario"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Apellido: </ion-label>
+              <ion-input placeholder="Apellidos del Beneficiario"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Tipo de Documento</ion-label>
+              <ion-select [(ngModel)]="Var">
+                <ion-select-option value="SE" selected>Seleccione</ion-select-option>
+                <ion-select-option value="C.C">C.C</ion-select-option>
+                <ion-select-option value="T.I">T.I</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Documento: </ion-label>
+              <ion-input placeholder="Número de Documento del Beneficiario"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11">
+              <ion-label position="floating" color="primary">Especialista</ion-label>
+              <ion-select [(ngModel)]="ESP" (ionChange)="Sleccion()">
+              <ion-select-option value="" selected>Seleccione</ion-select-option>
+                <ion-select-option *ngFor="let doctor of global.x" value="{{doctor.Nombre}}">{{doctor.Nombre}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11" *ngIf="ESP!=''">
+              <ion-label position="floating" color="primary">Especialidad: </ion-label>
+              <ion-input placeholder="---------" [(ngModel)]="Especialidad" readonly="true"></ion-input>
+            </ion-item>            
+            <ion-item class="col-xl-2 col-12" *ngIf="ESP!=''">
+              <ion-label color="primary">Lunes </ion-label>
+              <ion-checkbox slot="end" disabled="{{Horario.Lunes}}" [(ngModel)]="Dia[0]"></ion-checkbox>
+            </ion-item>
+            <ion-item class="col-xl-2 col-12" *ngIf="ESP!=''">
+              <ion-label color="primary">Martes </ion-label>
+              <ion-checkbox slot="end" disabled="{{Horario.Martes}}" [(ngModel)]="Dia[1]"></ion-checkbox>
+            </ion-item>
+            <ion-item class="col-xl-2 col-12" *ngIf="ESP!=''">
+              <ion-label color="primary">Miercoles </ion-label>
+              <ion-checkbox slot="end" disabled="{{Horario.Miercoles}}" [(ngModel)]="Dia[2]"></ion-checkbox>
+            </ion-item>
+            <ion-item class="col-xl-2 col-12" *ngIf="ESP!=''">
+              <ion-label color="primary">Jueves </ion-label>
+              <ion-checkbox slot="end" disabled="{{Horario.Jueves}}" [(ngModel)]="Dia[3]"></ion-checkbox>
+            </ion-item>
+            <ion-item class="col-xl-2 col-12" *ngIf="ESP!=''">
+              <ion-label color="primary">Viernes </ion-label>
+              <ion-checkbox slot="end" disabled="{{Horario.Viernes}}" [(ngModel)]="Dia[4]"></ion-checkbox>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11" *ngIf="ESP!=''">
+              <ion-label position="floating" color="primary">Hora: </ion-label>
+              <ion-input placeholder="Hora de la Cita" type="time"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-6 col-11"  *ngIf="ESP!=''">
+              <ion-label position="floating" color="primary">Consultorio: </ion-label>
+              <ion-input [(ngModel)]="Valor" readonly="true"></ion-input>
+            </ion-item>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <div class="row justify-content-center">
+        <ion-button class="col-xl-4 col-6" expand="block" fill="outline" size="large" (click)="Click()">
+          <ion-icon slot="start" name="save"></ion-icon>
+          Guardar cita
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
